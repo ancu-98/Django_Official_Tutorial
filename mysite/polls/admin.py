@@ -3,9 +3,9 @@ from .models import Choice, Question
 
 # Register your models here.
 
-admin.site.site_header = "Polls Admin"
-admin.site.site_title = "The world's slicket Admin Panel"
-admin.site.index_title = "New Title"
+# admin.site.site_header = "Polls Admin"
+# admin.site.site_title = "The world's slicket Admin Panel"
+# admin.site.index_title = "New Title"
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
