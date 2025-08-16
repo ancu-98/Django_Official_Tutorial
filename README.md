@@ -67,8 +67,8 @@ A lo largo de este tutorial, te guiaremos por el proceso de creación de una apl
 |------------|------------------------------------|-------------------------------------------------|
 | GET        | `/polls`                           | Retrive all Questions                           |
 | GET        | `/polls/sepecifics/:id`            | Find a Question By Id                           |
-| POST       | `/polls/sepecifics/:id`            | Vote a Choice in a Question by `:id`            |
 | GET        | `/polls/sepecifics/:id/results`    | View votes results in a Question by `:id`       |
+| POST       | `/polls/sepecifics/:id/vote`       | Vote a Choice in a Question by `:id`            |
 
 #### Admin App
 
