@@ -6,7 +6,12 @@ A lo largo de este tutorial, te guiaremos por el proceso de creación de una apl
 
 - Un sitio público que permite a los usuarios ver encuestas y votar en ellas.
 
+![Image Alt](https://github.com/ancu-98/Django_Official_Tutorial/blob/6f0dc3174207525af84abd29a661459f2a406649/mysite/polls/static/polls/images/polls-website-overview.png)
+
 - Un sitio de administración que permite añadir, modificar y eliminar encuestas.
+
+![Image Alt](https://github.com/ancu-98/Django_Official_Tutorial/blob/d80b73bbe15232b05bc7d73c6128986d820d0f24/mysite/polls/static/polls/images/polls-admin-website-overview.png)
+
 
 ## 🚀 Tecnologías utilizadas
 
@@ -143,7 +148,13 @@ python manage.py runserver
 ```
 > *Una vez tengas corriendo Django, accede a http://127.0.0.1:8000 desde el navegador*
 
-## 📚 Documentación paso a paso
+## 🎥 Ver ejemplo en vivo
+
+Video demostración del proyecto:
+
+- Polls Website:
+
+- Admin Polls Website:
 
 Aquí te muestro la documentación del paso a paso de cómo construí el proyecto, por si quieres crear este proyecto tu mismo desde cero:
 
