@@ -152,9 +152,9 @@ python manage.py runserver
 
 Video demostración del proyecto:
 
-- Polls Website:
+- Polls App:
 
-- Admin Polls Website:
+- Admin Polls App:
 
 Aquí te muestro la documentación del paso a paso de cómo construí el proyecto, por si quieres crear este proyecto tu mismo desde cero:
 
