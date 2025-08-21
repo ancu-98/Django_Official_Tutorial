@@ -1,9 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Results view</title>
+    <meta name="description" content="Results view" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'polls/CSS/results.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <a href="{% url 'polls:index' %}" class="back-link">← Volver a Polls</a>
+      </header>
+
+      <div class="results-card">
+        <div class="question-header">
+          <h1 class="question-title">{{ question.question_text }}</h1>
+          <p class="results-subtitle">Resultados de la votación</p>
+        </div>
+
+        <div class="results-container">
+          {% for choice in question.choice_set.all %}
+          <div class="result-item">
+            <div class="choice-info">
+              <h3 class="choice-text">{{ choice.choice_text }}</h3>
+              <span class="vote-count"
+                >{{ choice.votes }} voto{{ choice.votes|pluralize }}</span
+              >
+            </div>
+            <div class="vote-bar">
+              <div class="vote-progress" data-votes="{{ choice.votes }}"></div>
+            </div>
+            <span class="vote-percentage" data-votes="{{ choice.votes }}"
+              >0%</span
+            >
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="actions">
+          <a href="{% url 'polls:detail' question.id %}" class="vote-again-btn"
+            >¿Votar de nuevo?
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'polls/JS/results.js' %}" defer></script>
+  </body>
+</html>
+
+{% comment %}
+
 <h1>{{ question.question_text }}</h1>
 
 <ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
+  {% for choice in question.choice_set.all %}
+  <li>
+    {{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize
+    }}
+  </li>
+  {% endfor %}
 </ul>
 
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+
+{% endcomment %}
