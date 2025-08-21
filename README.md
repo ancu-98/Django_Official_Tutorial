@@ -154,7 +154,11 @@ Video demostración del proyecto:
 
 - Polls App:
 
+https://github.com/user-attachments/assets/bc7d5606-eb81-42aa-a892-4f617161c6a4
+
 - Admin Polls App:
+
+https://github.com/user-attachments/assets/0de6276b-b5b9-41af-8a96-854e9ca67caa
 
 Aquí te muestro la documentación del paso a paso de cómo construí el proyecto, por si quieres crear este proyecto tu mismo desde cero:
 
