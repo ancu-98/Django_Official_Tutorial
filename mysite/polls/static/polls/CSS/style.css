@@ -1,0 +1,166 @@
+/* Reset y configuración base */
+* {
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: url("../images/python-background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.container {
+    min-height: 100vh;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0.5rem 0 0 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid de preguntas */
+.questions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Tarjetas de preguntas */
+.question-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+}
+
+.question-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2) ;
+}
+
+.question-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.question-content {
+    padding: 2rem;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.question-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+}
+
+/* Estado sin polls */
+.no-polls {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+.no-polls h2 {
+    color: white;
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+}
+
+.no-polls p {
+    color: #7f8c8d;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .questions-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .question-content {
+        padding: 1.5rem;
+        min-height: 120px;
+    }
+
+    .question-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .question-content {
+        padding: 1.2rem;
+    }
+
+    .question-text {
+        font-size: 1.1rem;
+    }
+}

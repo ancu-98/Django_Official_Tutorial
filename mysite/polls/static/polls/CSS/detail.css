@@ -1,0 +1,279 @@
+/* Reset y configuración base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: url("../images/python-background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.container {
+    min-height: 100vh;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header con navegación */
+.header {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tarjeta principal del poll */
+.poll-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    overflow: hidden;
+    flex: 1;
+}
+
+/* Formulario de votación */
+.vote-form {
+    padding: 2.5rem;
+}
+
+/* Header de la pregunta */
+.question-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.question-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.error-message {
+    background: #e74c3c;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+/* Fieldset personalizado */
+.choices-fieldset {
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.choices-legend {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    text-align: center;
+}
+
+/* Container de opciones */
+.choices-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Items individuales de elección */
+.choice-item {
+    position: relative;
+}
+
+.choice-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.choice-label {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.choice-label:hover {
+    background: rgba(52, 152, 219, 0.1);
+    border-color: rgba(52, 152, 219, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Radio button personalizado */
+.choice-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    margin-right: 1rem;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.choice-radio::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3498db;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+/* Estado seleccionado */
+.choice-input:checked + .choice-label {
+    background: rgba(52, 152, 219, 0.15);
+    border-color: #3498db;
+    box-shadow: 0 4px 16px rgba(52, 152, 219, 0.3);
+}
+
+.choice-input:checked + .choice-label .choice-radio {
+    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.choice-input:checked + .choice-label .choice-radio::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.choice-text {
+    flex: 1;
+    color: white;
+}
+
+/* Acciones de votación */
+.vote-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.vote-button {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vote-button:hover {
+    background: linear-gradient(135deg, #2980b9, #21618c);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+}
+
+.vote-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.4);
+}
+
+/* Estados de focus para accesibilidad */
+.choice-input:focus + .choice-label {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+.vote-button:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .vote-form {
+        padding: 1.5rem;
+    }
+
+    .question-title {
+        font-size: 1.6rem;
+    }
+
+    .choice-label {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .vote-button {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .question-title {
+        font-size: 1.4rem;
+    }
+
+    .choice-label {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .choices-legend {
+        font-size: 1.1rem;
+    }
+}
