@@ -1,5 +1,50 @@
 {% load static %}
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Polls App</title>
+        <meta name="description" content="Polls App">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'polls/CSS/style.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1 class="title">Polls</h1>
+                <p class="subtitle">Participa en las encuestas, respondiendo a las siguientes preguntas:</p>
+            </header>
+
+            <main class="content">
+                {% if latest_question_list %}
+                    <div class="questions-grid">
+                        {% for question in latest_question_list %}
+                            <div class="question-card">
+                                <a href="{% url 'polls:detail' question.id %}" class="question-link">
+                                    <div class="question-content">
+                                        <h3 class="question-text">{{ question.question_text }}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="no-polls">
+                        <h2>No hay encuestas disponibles</h2>
+                        <p>Vuelve más tarde para participar en nuevas encuestas.</p>
+                    </div>
+                {% endif %}
+            </main>
+        </div>
+    </body>
+</html>
+
+{% comment %}
+
+{% load static %}
+
 <link rel="stylesheet" href="{% static 'polls/style.css' %}">
 
 {% if latest_question_list %}
@@ -11,3 +56,5 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+{% endcomment %}
